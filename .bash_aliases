@@ -17,6 +17,7 @@ alias ssu="sudo systemctl start ssh && ip4 && echo 'ssh server up'"
 alias ssd="sudo systemctl stop ssh && echo 'ssh server down'"
 alias c="clear"
 alias ..="cd .."
+alias v="vim"
 
 # javascript alias
 alias yi="yarn install"
@@ -32,3 +33,9 @@ alias nci="npm ci"
 # docker alias
 alias docker-stop="docker ps | awk -F' ' '{print \$1}' | grep -v CONTAINER | xargs -i docker stop {}"
 
+# fan configs
+alias fanspeed="mono /opt/nbfc/nbfc.exe set -s"
+alias fanspeed-auto="mono /opt/nbfc/nbfc.exe set -a"
+alias fanspeed-status="mono /opt/nbfc/nbfc.exe status -a"
+
+alias open="nemo"

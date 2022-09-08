@@ -55,3 +55,4 @@ function clip() {
         copy "$input"
 	fi
 }
+
