@@ -12,6 +12,7 @@ general {
 }
 
 order += "disk /"
+order += "disk /home/samrat"
 order += "wireless _first_"
 order += "battery all"
 order += "load"
@@ -37,3 +38,7 @@ load {
 disk "/" {
         format = "%avail"
 }
+
+disk "/home/samrat" {
+    format = "%avail"
+    }

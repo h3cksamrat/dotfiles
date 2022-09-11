@@ -1,3 +1,4 @@
+#!/bin/bash
 # change directory and ls
 function cl() {
     DIR="$*";
@@ -22,7 +23,7 @@ function mkcd() {
 function gitcheat() {
     DATE="$1"
     if [ "$DATE" ]; then
-        # Tue Apr 12 15:23:10 2022 +0545 
+        # Tue Apr 12 15:23:10 2022 +0545
        export GIT_COMMITTER_DATE="$DATE" && git commit --amend --no-edit --date "$DATE"
        return;
     fi;
@@ -56,3 +57,14 @@ function clip() {
 	fi
 }
 
+function tnew() {
+  tmux new -s `pwd | sed 's/.*\///g'`
+}
+
+function topen() {
+  local tmux_session=`tmux ls | awk -F: '{print $1}'`
+  if [ "$tmux_session" ];
+  then
+  tmux attach -t `echo "$tmux_session" | fzf`
+  fi
+}

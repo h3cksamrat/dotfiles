@@ -39,3 +39,5 @@ alias fanspeed-auto="mono /opt/nbfc/nbfc.exe set -a"
 alias fanspeed-status="mono /opt/nbfc/nbfc.exe status -a"
 
 alias open="nemo"
+alias battery_level="cat /sys/class/power_supply/BAT1/capacity"
+alias q="exit"
