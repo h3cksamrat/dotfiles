@@ -8,13 +8,12 @@ o.number = true
 o.relativenumber = true
 o.signcolumn = 'yes:1'
 o.cursorline = true
-o.colorcolumn = 80
+o.colorcolumn = "80"
 
 o.timeoutlen = 500
 o.updatetime = 200
 
 o.scrolloff = 8
-o.history = 50
 o.clipboard = 'unnamedplus'
 
 o.ignorecase = true
@@ -38,8 +37,6 @@ o.swapfile = false
 o.backup = false
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.undofile = true
-
-o.wildmenu = true
 
 -- Map <leader> to space
 g.mapleader = ' '
