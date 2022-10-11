@@ -2,7 +2,7 @@ local g = vim.g
 local o = vim.o
 
 o.termguicolors = true
-
+o.mouse = ''
 -- Better editor UI
 o.number = true
 o.relativenumber = true
