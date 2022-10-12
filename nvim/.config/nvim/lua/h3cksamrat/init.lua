@@ -1,5 +1,6 @@
-require("h3cksamrat.set")
 require("h3cksamrat.packer")
+require("h3cksamrat.set")
+require("h3cksamrat.lsp")
 
 local A = vim.api
 local augroup = A.nvim_create_augroup

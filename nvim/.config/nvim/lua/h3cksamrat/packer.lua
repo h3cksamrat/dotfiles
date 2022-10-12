@@ -7,7 +7,6 @@ return require("packer").startup(function(use)
 
   -- colorsscheme
   use("gruvbox-community/gruvbox")
-  use("tomasiser/vim-code-dark")
   use("folke/tokyonight.nvim")
 
   -- tpope plugins
@@ -33,4 +32,18 @@ return require("packer").startup(function(use)
   })
   use("nvim-treesitter/nvim-treesitter-refactor")
   use("romgrk/nvim-treesitter-context")
+
+  -- lsp
+  use("neovim/nvim-lspconfig")
+  use("williamboman/nvim-lsp-installer")
+
+  -- nvim-cmp
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+
+  -- Luasnip
+  use("L3MON4D3/LuaSnip")
+  use("saadparwaiz1/cmp_luasnip")
 end)

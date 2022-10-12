@@ -1,42 +1,43 @@
 local g = vim.g
-local o = vim.o
+local opt = vim.opt
 
-o.termguicolors = true
-o.mouse = ''
+opt.completeopt={ "menu","menuone","noselect" }
+opt.termguicolors = true
+opt.mouse = ''
 -- Better editor UI
-o.number = true
-o.relativenumber = true
-o.signcolumn = 'yes:1'
-o.cursorline = true
-o.colorcolumn = "80"
+opt.number = true
+opt.relativenumber = true
+opt.signcolumn = 'yes:1'
+opt.cursorline = true
+opt.colorcolumn = "80"
 
-o.timeoutlen = 500
-o.updatetime = 200
+opt.timeoutlen = 500
+opt.updatetime = 200
 
-o.scrolloff = 8
-o.clipboard = 'unnamedplus'
+opt.scrolloff = 8
+opt.clipboard = 'unnamedplus'
 
-o.ignorecase = true
-o.smartcase = true
-o.hlsearch = false
-o.incsearch = true
-o.grepprg="rg --vimgrep --smart-case --follow"
+opt.ignorecase = true
+opt.smartcase = true
+opt.hlsearch = false
+opt.incsearch = true
+opt.grepprg="rg --vimgrep --smart-case --follow"
 
-o.expandtab = true
-o.smarttab = true
-o.wrap = true
-o.tabstop = 2
-o.shiftwidth = 0
-o.softtabstop = -1
+opt.expandtab = true
+opt.smarttab = true
+opt.wrap = true
+opt.tabstop = 2
+opt.shiftwidth = 0
+opt.softtabstop = -1
 
-o.splitright = true
-o.splitbelow = true
+opt.splitright = true
+opt.splitbelow = true
 
-o.hidden = true
-o.swapfile = false
-o.backup = false
-o.undodir = os.getenv("HOME") .. "/.vim/undodir"
-o.undofile = true
+opt.hidden = true
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
 -- Map <leader> to space
 g.mapleader = ' '
