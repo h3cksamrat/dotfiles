@@ -1,7 +1,7 @@
 local Remap = require("h3cksamrat.keymap")
 local nnoremap = Remap.nnoremap
 
-nnoremap("<C-p>", ":Telescope")
+nnoremap("<C-p>", ":Telescope ")
 nnoremap("<leader>ps", function()
 	require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})
 end)
@@ -16,11 +16,6 @@ nnoremap("<leader>pb", function()
 	require('telescope.builtin').buffers()
 end)
 nnoremap("<leader>vh", function()
-	require('telescope.builtin').help_tags()
-end)
-
--- TODO: Fix this immediately
-nnoremap("<leader>vwh", function()
 	require('telescope.builtin').help_tags()
 end)
 

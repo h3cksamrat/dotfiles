@@ -1,4 +1,3 @@
-require('h3cksamrat.lsp.nvim-cmp')
 local lsp_installer = require('nvim-lsp-installer')
 local cmp = require('cmp')
 
@@ -16,7 +15,7 @@ local common_on_attach = function ()
   nnoremap("<leader>dl", "<cmd>Telescope diagnostics<cr>", {buffer=0})
   nnoremap("<leader>gr", vim.lsp.buf.rename, {buffer=0})
   nnoremap("<leader>ca", vim.lsp.buf.code_action, {buffer=0})
-  nnoremap("<leader>bf", vim.lsp.buf.formatting, {buffer=0})
+  nnoremap("<leader>bf", vim.lsp.buf.format, {buffer=0})
 end
 
 local lsp_servers = { "pyserver", "tsserver", "eslint", "emmet_ls" }

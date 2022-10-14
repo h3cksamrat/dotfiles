@@ -1,1 +1,4 @@
 packer_compiled.lua
+.config/zsh/.zcompdump
+.config/zsh/plugins/
+.config/tmux/plugins/
