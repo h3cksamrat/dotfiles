@@ -53,4 +53,16 @@ dap.configurations.typescript = {
     port = 9229,
     skipFiles = { "<node_internals>/**", "node_modules/**" },
   },
+  {
+    type= "node2",
+    request= "launch",
+    name= "Debug Nest Framework",
+    args= { "${workspaceFolder}/src/main.ts" },
+    runtimeArgs= { "--nolazy", "-r", "ts-node/register", "-r", "tsconfig-paths/register" },
+    sourceMaps= true,
+    envFile= "${workspaceFolder}/.env",
+    cwd = vim.loop.cwd(),
+    console= "integratedTerminal",
+    protocol = "inspector"
+  }
 }

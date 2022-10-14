@@ -3,3 +3,4 @@ lua << EOF
 EOF
 
 set winbar=%=%m\ %f
+set exrc
