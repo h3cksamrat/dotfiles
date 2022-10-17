@@ -67,11 +67,12 @@ function topen() {
   fi
 }
 
-function defTmux() {
-  local sessions=`tmux ls | cut -d ':' -f 1`;
-  for i in $sessions; do if [ "$i" = "default" ]; then tmux attach -t default; return; fi; done; tmux new -s default; }
+function ttopen() {
+  local session=$*;
+  tmux new-session -d -s "$session"
+  tmux switch-client -t "$session"
+}
 
-# git functions
 function gs() {
   git stash push -m "$*"
 }
@@ -85,18 +86,6 @@ function music() {
   volume=`[ $2 ] && echo "$2" || echo 50`;
   youtube-dl -f bestaudio  ytsearch:"$song" -o - 2>/dev/null | ffplay -nodisp -autoexit -volume $volume -i - &>/dev/null
 }
-
-function tmusic() {
-  tmux new-session -d -s music
-  tmux switch-client -t music
-}
-
-function ttopen() {
-  local session=$*;
-  tmux new-session -d -s "$session"
-  tmux switch-client -t "$session"
-}
-
 
 function v() {
   local currentDirectory=`pwd`
