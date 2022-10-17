@@ -3,4 +3,4 @@ local nnoremap = Remap.nnoremap
 
 local gitsigns = require('gitsigns')
 
-nnoremap("<leader>k", gitsigns.preview_hunk)
+nnoremap("<leader>gk", gitsigns.preview_hunk)

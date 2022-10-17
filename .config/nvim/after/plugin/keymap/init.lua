@@ -4,7 +4,6 @@ local vnoremap = Remap.vnoremap
 local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
 local tnoremap = Remap.tnoremap
-local nmap = Remap.nmap
 
 nnoremap("<leader>u", ":UndotreeShow<CR>")
 nnoremap("<leader>o", "o<ESC>")
@@ -24,15 +23,6 @@ nnoremap("<leader>k", "<C-w>k")
 nnoremap("<leader>l", "<C-w>l")
 
 tnoremap("<ESC>", "<C-\\><C-n>")
-
-local nvim_tree_api = require("nvim-tree.api")
-nnoremap("<C-b>", nvim_tree_api.tree.toggle)
-nnoremap("<leader>i", function()
-	local view = require("nvim-tree.view")
-	if view.is_visible() then
-		nvim_tree_api.tree.change_root_to_node()
-	end
-end)
 
 -- Toogle number
 nnoremap("<leader>tr", function ()
