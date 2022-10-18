@@ -63,15 +63,32 @@ function topen() {
   local tmux_session=`tmux ls | awk -F: '{print $1}'`
   if [ "$tmux_session" ];
   then
-    tmux attach -t `echo "$tmux_session" | fzf`
+    local selected_session=`echo "$tmux_session" | fzf`
+    if [ "$selected_session" ];
+    then
+      tmux attach -t "$selected_session"
+    fi
   fi
 }
 
 function ttopen() {
   local session=$*;
-  tmux new-session -d -s "$session"
-  tmux switch-client -t "$session"
-}
+  if [ "$session" ]; then
+    tmux new-session -d -s "$session"
+    tmux switch-client -t "$session"
+  else
+    local tmux_session=`tmux ls | awk -F: '{print $1}'`
+    if [ "$tmux_session" ];
+    then
+      local selected_session=`echo "$tmux_session" | fzf`
+      if [ "$selected_session" ];
+      then
+        tmux new-session -d -s "$selected_session"
+        tmux switch-client -t "$selected_session"
+      fi
+    fi
+  fi
+  }
 
 function gs() {
   git stash push -m "$*"
