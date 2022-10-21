@@ -1,4 +1,4 @@
 clear Lock
-keycode 66 = Alt_L
+keycode 66 = Escape
 keycode 78 = Caps_Lock
 keycode 108 = Alt_L

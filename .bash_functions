@@ -121,3 +121,9 @@ function v() {
     return;
   fi
 }
+
+function b() {
+  # run original bash command instead of alias
+  local command="$@"
+  bash -c "$command"
+}

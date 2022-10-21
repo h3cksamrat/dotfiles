@@ -5,9 +5,10 @@ local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
 local tnoremap = Remap.tnoremap
 
-nnoremap("<leader>u", ":UndotreeShow<CR>")
+nnoremap("<leader>u", "<cmd>UndotreeShow<CR>")
 nnoremap("<leader>o", "o<ESC>")
 nnoremap("<leader>O", "O<ESC>")
+nnoremap("<leader><leader>x", "<cmd>w | so %<cr>")
 
 nnoremap("<C-\\>", "<CMD>vsplit<CR>")
 nnoremap("<A-\\>", "<CMD>split<CR>")
