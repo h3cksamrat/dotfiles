@@ -11,6 +11,7 @@ return require("packer").startup(function(use)
   -- colorsscheme
   use("gruvbox-community/gruvbox")
   use("folke/tokyonight.nvim")
+  use({ "catppuccin/nvim", as = "catppuccin" })
 
   -- tpope plugins
   use("tpope/vim-surround")

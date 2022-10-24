@@ -1,5 +1,4 @@
 local lsp_installer = require('nvim-lsp-installer')
-local cmp = require('cmp')
 
 local Remap = require('h3cksamrat.keymap');
 local nnoremap = Remap.nnoremap;

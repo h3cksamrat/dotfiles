@@ -1,4 +1,8 @@
-vim.g.h3cksamrat_colorscheme = "tokyonight-moon"
+vim.g.h3cksamrat_colorscheme = "catppuccin"
+
+require("catppuccin").setup({
+  transparent_background = false;
+})
 
 function ColorMyPencils()
   vim.g.gruvbox_contrast_dark = 'hard'
@@ -14,7 +18,7 @@ function ColorMyPencils()
   end
 
   hl("SignColumn", {
-    -- bg = "none",
+    bg = "none",
   })
 
   hl("ColorColumn", {
@@ -26,17 +30,17 @@ function ColorMyPencils()
     bg = "None"
   })
 
-  -- hl("Normal", {
-  --   bg = "none"
-  -- })
+  hl("Normal", {
+    bg = "none"
+  })
 
-    hl("LineNr", {
-      fg = "#5eacd3"
-    })
+  hl("LineNr", {
+    fg = "#5eacd3"
+  })
 
-    hl("netrwDir", {
-      fg = "#5eacd3"
-    })
+  hl("netrwDir", {
+    fg = "#5eacd3"
+  })
 end
 
 ColorMyPencils()
