@@ -41,6 +41,9 @@ opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
+opt.list = true
+opt.listchars:append "eol:↴"
+
 -- Map <leader> to space
 g.mapleader = ' '
 g.maplocalleader = ' '

@@ -1,8 +1,4 @@
-vim.g.h3cksamrat_colorscheme = "catppuccin"
-
-require("catppuccin").setup({
-  transparent_background = false;
-})
+vim.g.h3cksamrat_colorscheme = "tokyonight-moon"
 
 function ColorMyPencils()
   vim.g.gruvbox_contrast_dark = 'hard'

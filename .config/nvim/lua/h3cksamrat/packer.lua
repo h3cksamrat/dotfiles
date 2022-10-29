@@ -6,6 +6,7 @@ return require("packer").startup(function(use)
   use("sbdchd/neoformat")
   use("mbbill/undotree")
   use("lukas-reineke/indent-blankline.nvim")
+  use("p00f/nvim-ts-rainbow")
   use("lewis6991/gitsigns.nvim")
 
   -- colorsscheme
@@ -34,12 +35,13 @@ return require("packer").startup(function(use)
   use("nvim-treesitter/nvim-treesitter", {
     run = ":TSUpdate"
   })
-  use("nvim-treesitter/nvim-treesitter-refactor")
   use("romgrk/nvim-treesitter-context")
 
   -- lsp
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
   use("neovim/nvim-lspconfig")
-  use("williamboman/nvim-lsp-installer")
+  use("folke/neodev.nvim")
 
   -- nvim-cmp
   use("hrsh7th/nvim-cmp")
