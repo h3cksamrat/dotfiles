@@ -3,24 +3,27 @@ return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
 
   -- misc plugins
+  use("kyazdani42/nvim-web-devicons")
   use("sbdchd/neoformat")
   use("mbbill/undotree")
   use("lukas-reineke/indent-blankline.nvim")
   use("p00f/nvim-ts-rainbow")
   use("lewis6991/gitsigns.nvim")
+  use({
+    "kylechui/nvim-surround",
+    tag = "*"
+  })
+  use("numToStr/Comment.nvim")
+  use("vimwiki/vimwiki")
 
   -- colorsscheme
-  use("gruvbox-community/gruvbox")
   use("folke/tokyonight.nvim")
-  use({ "catppuccin/nvim", as = "catppuccin" })
+  use("sainnhe/sonokai") -- Packer
 
   -- tpope plugins
-  use("tpope/vim-surround")
   use("tpope/vim-repeat")
-  use("tpope/vim-commentary")
 
   -- a better status line
-  use("kyazdani42/nvim-web-devicons")
   use("nvim-lualine/lualine.nvim")
 
   use("s1n7ax/nvim-terminal")
@@ -36,12 +39,13 @@ return require("packer").startup(function(use)
     run = ":TSUpdate"
   })
   use("romgrk/nvim-treesitter-context")
+  use("nvim-treesitter/nvim-treesitter-textobjects")
 
   -- lsp
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
   use("neovim/nvim-lspconfig")
-  use("folke/neodev.nvim")
+  use("onsails/lspkind.nvim")
 
   -- nvim-cmp
   use("hrsh7th/nvim-cmp")

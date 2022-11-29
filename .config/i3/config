@@ -188,7 +188,7 @@ bindsym $mod+Shift+period exec systemctl suspend
 bindsym $mod+Ctrl+l exec cinnamon-screensaver-command --lock
 
 exec --no-startup-id bash ~/.fehbg
-exec --no-startup-id redshift
+exec --no-startup-id redshift-gtk
 exec --no-startup-id copyq
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace 3; exec gnome-terminal --hide-menubar'

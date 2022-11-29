@@ -2,6 +2,11 @@ alias ls="exa --icons"
 alias ll="ls -lh"
 alias la="ls -a"
 # alias lt="ls --human-readable --size -1 -S --classify"
+alias cat="bat"
+
+alias gcd='chosed=`find . -maxdepth 1 -type d | gum choose --height 20 | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"` && cd $chosed'
+alias gitlog="git log --oneline | gum filter | cut -d' ' -f1"
+alias serve="browser-sync start --server --files ."
 
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
 alias gh='history|rg'
@@ -27,6 +32,7 @@ alias q="exit"
 # nvim alias
 alias vim="nvim"
 alias vi="nvim"
+alias wiki="nvim ~/vimwiki/index.wiki"
 
 # fan configs
 alias fanspeed="mono /opt/nbfc/nbfc.exe set -s"

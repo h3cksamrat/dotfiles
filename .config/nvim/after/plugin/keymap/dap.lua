@@ -1,19 +1,19 @@
 local Remap = require("h3cksamrat.keymap")
-local nmap = Remap.nmap
+local nnoremap = Remap.nnoremap
 
 local dap = require("dap")
 
-nmap("<F5>", dap.continue)
-nmap("<F2>", dap.step_into)
-nmap("<F3>", dap.step_over)
-nmap("<F4>", dap.step_out)
-nmap("<leader>b", dap.toggle_breakpoint)
-nmap("<leader>B", function()
+nnoremap("<F5>", dap.continue)
+nnoremap("<F2>", dap.step_into)
+nnoremap("<F3>", dap.step_over)
+nnoremap("<F4>", dap.step_out)
+nnoremap("<leader>b", dap.toggle_breakpoint)
+nnoremap("<leader>B", function()
   dap.set_breakpoint(vim.fn.input('Breakpoint condition: '))
 end)
-nmap("<leader>lp", function()
+nnoremap("<leader>lp", function()
   dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
 end)
-nmap("<leader>dr", dap.repl.open)
+nnoremap("<leader>dr", dap.repl.open)
 
-nmap("<leader>dgt", require("dap-go").debug_test, { silent = true })
+nnoremap("<leader>dgt", require("dap-go").debug_test, { silent = true })

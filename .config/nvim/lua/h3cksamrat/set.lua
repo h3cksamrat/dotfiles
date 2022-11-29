@@ -9,7 +9,7 @@ opt.exrc = true
 -- Better editor UI
 opt.number = true
 opt.relativenumber = true
-opt.signcolumn = 'yes:1'
+opt.signcolumn = 'yes:2'
 opt.cursorline = true
 opt.colorcolumn = "80"
 
@@ -44,6 +44,7 @@ opt.undofile = true
 opt.list = true
 opt.listchars:append "eol:↴"
 
+g.snippets = "luasnip"
 -- Map <leader> to space
 g.mapleader = ' '
 g.maplocalleader = ' '

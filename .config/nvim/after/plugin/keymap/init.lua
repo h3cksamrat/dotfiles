@@ -5,7 +5,7 @@ local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
 local tnoremap = Remap.tnoremap
 
-nnoremap("<leader>u", "<cmd>UndotreeShow<CR>")
+nnoremap("<leader>u", "<cmd>UndotreeToggle<CR>")
 nnoremap("<leader>o", "o<ESC>")
 nnoremap("<leader>O", "O<ESC>")
 nnoremap("<leader><leader>x", "<cmd>w | so %<cr>")
@@ -39,7 +39,7 @@ end )
 local arrow_keys = { "<Left>", "<Right>", "<Up>", "<Down>" }
 local modes = {nnoremap, vnoremap, inoremap }
 for _, key in pairs(arrow_keys) do
-	for __, mode in pairs(modes) do
+	for _, mode in pairs(modes) do
 		mode(key, "<nop>")
 	end
 end

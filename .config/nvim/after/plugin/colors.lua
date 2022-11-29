@@ -1,4 +1,5 @@
-vim.g.h3cksamrat_colorscheme = "tokyonight-moon"
+vim.g.h3cksamrat_colorscheme = "sonokai"
+vim.g.sonokai_style = 'andromeda'
 
 function ColorMyPencils()
   vim.g.gruvbox_contrast_dark = 'hard'
@@ -26,9 +27,9 @@ function ColorMyPencils()
     bg = "None"
   })
 
-  hl("Normal", {
-    bg = "none"
-  })
+  -- hl("Normal", {
+  --   bg = "none"
+  -- })
 
   hl("LineNr", {
     fg = "#5eacd3"
