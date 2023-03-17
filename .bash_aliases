@@ -8,6 +8,8 @@ alias gcd='chosed=`find . -maxdepth 1 -type d | gum choose --height 20 | sed -r 
 alias gitlog="git log --oneline | gum filter | cut -d' ' -f1"
 alias serve="browser-sync start --server --files ."
 
+alias show_scripts="cat package.json | gron | rg '^json.scripts' | gron -u"
+
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
 alias gh='history|rg'
 

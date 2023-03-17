@@ -2,12 +2,16 @@ return require("packer").startup(function(use)
   -- packer can manage itself
   use("wbthomason/packer.nvim")
 
+  use("github/copilot.vim")
+
   -- misc plugins
+  use("folke/zen-mode.nvim")
   use("kyazdani42/nvim-web-devicons")
   use("sbdchd/neoformat")
   use("mbbill/undotree")
   use("lukas-reineke/indent-blankline.nvim")
   use("p00f/nvim-ts-rainbow")
+
   use("lewis6991/gitsigns.nvim")
   use({
     "kylechui/nvim-surround",

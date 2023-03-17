@@ -52,4 +52,8 @@ PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
 
 SOLANA_PATH="$HOME/.local/share/solana/install/active_release/bin"
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 export PATH="$PATH:$PNPM_HOME:$VCPKG_ROOT:$SOLANA_PATH"
