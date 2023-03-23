@@ -22,7 +22,6 @@ return require("packer").startup(function(use)
 
   -- colorsscheme
   use("folke/tokyonight.nvim")
-  use("sainnhe/sonokai") -- Packer
 
   -- tpope plugins
   use("tpope/vim-repeat")
@@ -39,9 +38,7 @@ return require("packer").startup(function(use)
   use("nvim-telescope/telescope.nvim")
 
   -- treesitter
-  use("nvim-treesitter/nvim-treesitter", {
-    run = ":TSUpdate"
-  })
+  use("nvim-treesitter/nvim-treesitter")
   use("romgrk/nvim-treesitter-context")
   use("nvim-treesitter/nvim-treesitter-textobjects")
 

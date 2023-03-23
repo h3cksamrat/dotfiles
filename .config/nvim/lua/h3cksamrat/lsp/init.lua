@@ -25,33 +25,5 @@ require("mason-lspconfig").setup_handlers({
 			capabilities = capabilities,
 		}
 		require("lspconfig")[server].setup(default_opts)
-	end,
-	["sumneko_lua"] = function()
-		local lua_dev_set = {
-			settings = {
-				Lua = {
-					completion = {
-						callSnippet = "Replace",
-					},
-				},
-			},
-			on_attach = common_on_attach,
-			capabilities = capabilities,
-		}
-
-		require("lspconfig").sumneko_lua.setup(lua_dev_set)
-	end,
-	["tsserver"] = function()
-		local tsserver_dev_set = {
-			init_options = {
-				preferences = {
-					disableSuggestions = false,
-				},
-			},
-			on_attach = common_on_attach,
-			capabilities = capabilities,
-		}
-
-		require("lspconfig").tsserver.setup(tsserver_dev_set)
-	end,
+	end
 })
