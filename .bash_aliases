@@ -11,7 +11,7 @@ alias serve="browser-sync start --server --files ."
 alias show_scripts="cat package.json | gron | rg '^json.scripts' | gron -u"
 
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
-alias gh='history|rg'
+alias hg='history|rg'
 
 alias ve='python3 -m venv ./venv'
 alias va='source ./venv/bin/activate'
