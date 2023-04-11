@@ -43,8 +43,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 20%-
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec "gnome-terminal --hide-menubar"
-bindsym $mod+Shift+Return exec "gnome-terminal --hide-menubar -- tmux"
+bindsym $mod+Return exec "alacritty"
+bindsym $mod+Shift+Return exec "alacritty --command tmux"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -191,4 +191,11 @@ exec --no-startup-id bash ~/.fehbg
 exec --no-startup-id redshift-gtk
 exec --no-startup-id copyq
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace 3; exec gnome-terminal --hide-menubar'
+exec --no-startup-id i3-msg 'workspace 3; exec alacritty'
+
+# Disable animations
+for_window [class="^.*"] border pixel 2
+# Disable transparency
+for_window [class="^.*"] opacity 1
+# Disable blur effects
+for_window [class="^.*"] blur background none
