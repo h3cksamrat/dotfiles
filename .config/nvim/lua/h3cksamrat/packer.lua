@@ -15,7 +15,7 @@ return require("packer").startup(function(use)
   use("lewis6991/gitsigns.nvim")
   use({
     "kylechui/nvim-surround",
-    tag = "*"
+    tag = "*",
   })
   use("numToStr/Comment.nvim")
   use("vimwiki/vimwiki")
@@ -74,4 +74,14 @@ return require("packer").startup(function(use)
   use("maxmellon/vim-jsx-pretty") -- JS and JSX syntax
   -- use("jparise/vim-graphql") -- GraphQL syntax
   use("mattn/emmet-vim")
+
+  -- dart
+  use("dart-lang/dart-vim-plugin")
+use {
+    'akinsho/flutter-tools.nvim',
+    requires = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+}
 end)
