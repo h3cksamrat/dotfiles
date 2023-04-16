@@ -196,13 +196,14 @@ exec --no-startup-id bash ~/.fehbg
 # add autostart applications
 exec --no-startup-id redshift-gtk
 exec --no-startup-id copyq
+exec --no-startup-id safeeyes
 
 # start applications to dedicated workspaces on startup
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace 3; exec alacritty'
 
 # Disable animations
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 # Disable transparency
 for_window [class="^.*"] opacity 1
 # Disable blur effects
