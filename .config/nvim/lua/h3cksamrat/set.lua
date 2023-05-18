@@ -48,3 +48,8 @@ g.snippets = "luasnip"
 -- Map <leader> to space
 g.mapleader = ' '
 g.maplocalleader = ' '
+
+-- foldmethod
+opt.foldmethod = 'expr'
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldlevel = 2

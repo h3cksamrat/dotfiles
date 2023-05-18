@@ -36,6 +36,10 @@ if [ -d "$HOME/.config/bin" ] ; then
   PATH="$HOME/.config/bin:$PATH"
 fi
 
+if [ -f "$HOME/.shell/env" ] ; then
+  . "$HOME/.shell/env"
+fi
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 . "$HOME/.cargo/env"
 

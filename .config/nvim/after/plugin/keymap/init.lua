@@ -26,20 +26,20 @@ nnoremap("<leader>l", "<C-w>l")
 tnoremap("<ESC>", "<C-\\><C-n>")
 
 -- Toogle number
-nnoremap("<leader>tr", function ()
-  if (vim.o.relativenumber) then
-    vim.o.relativenumber = false
-    vim.o.number = true
-  else
-    vim.o.relativenumber = true
-  end
-end )
+nnoremap("<leader>tr", function()
+	if vim.o.relativenumber then
+		vim.o.relativenumber = false
+		vim.o.number = true
+	else
+		vim.o.relativenumber = true
+	end
+end)
 
 -- To disable arrow keys
-local arrow_keys = { "<Left>", "<Right>", "<Up>", "<Down>" }
+--[[ local arrow_keys = { "<Left>", "<Right>", "<Up>", "<Down>" }
 local modes = {nnoremap, vnoremap, inoremap }
 for _, key in pairs(arrow_keys) do
 	for _, mode in pairs(modes) do
 		mode(key, "<nop>")
 	end
-end
+end ]]

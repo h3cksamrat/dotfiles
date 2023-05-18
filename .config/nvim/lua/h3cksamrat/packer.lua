@@ -5,6 +5,7 @@ return require("packer").startup(function(use)
 	use("github/copilot.vim")
 
 	-- misc plugins
+	use("dstein64/vim-startuptime")
 	use("folke/zen-mode.nvim")
 	use("kyazdani42/nvim-web-devicons")
 	use("sbdchd/neoformat")
@@ -21,6 +22,7 @@ return require("packer").startup(function(use)
 	use("vimwiki/vimwiki")
 
 	-- colorsscheme
+	use("abhidahal/onsetGlaze.nvim")
 	use("folke/tokyonight.nvim")
 
 	-- tpope plugins
@@ -83,5 +85,22 @@ return require("packer").startup(function(use)
 			"nvim-lua/plenary.nvim",
 			"stevearc/dressing.nvim", -- optional for vim.ui.select
 		},
+		filetypes = { "dart" },
 	})
+
+	-- terraform
+	-- use({
+	-- 	"nathom/filetype.nvim",
+	-- 	config = function()
+	-- 		require("filetype").setup({
+	-- 			overrides = {
+	-- 				extensions = {
+	-- 					tf = "terraform",
+	-- 					tfvars = "terraform",
+	-- 					tfstate = "json",
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- })
 end)
