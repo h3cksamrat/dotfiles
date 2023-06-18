@@ -55,6 +55,17 @@ function clip() {
   fi
 }
 
+function trim() {
+  local input="$(< /dev/stdin)"
+  if [ -z "$input" ];
+  then
+    echo "only stdin is supported"
+  else
+    awk '{$1=$1};1' <<< "$input"
+  fi
+
+}
+
 function tnew() {
   tmux new -s `pwd | sed 's/.*\///g'`
 }

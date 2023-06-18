@@ -45,7 +45,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec "alacritty"
 bindsym $mod+Shift+Return exec "alacritty --command tmux"
-bindsym $mod+Shift+b exec "firefox"
+bindsym $mod+Shift+b exec "brave-browser-stable"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -200,8 +200,8 @@ exec --no-startup-id copyq
 exec --no-startup-id safeeyes
 
 # start applications to dedicated workspaces on startup
-exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'workspace 3; exec alacritty'
+exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/brave-browser-stable'
+exec --no-startup-id i3-msg 'workspace 3; exec /home/samrat/.cargo/bin/alacritty'
 
 # Disable animations
 for_window [class="^.*"] border pixel 0

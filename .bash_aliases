@@ -7,6 +7,7 @@ alias cat="bat"
 alias gcd='chosed=`find . -maxdepth 1 -type d | gum choose --height 20 | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"` && cd $chosed'
 alias gitlog="git log --oneline | gum filter | cut -d' ' -f1"
 alias serve="browser-sync start --server --files ."
+alias gti="git"
 
 alias show_scripts="cat package.json | gron | rg '^json.scripts' | gron -u"
 
