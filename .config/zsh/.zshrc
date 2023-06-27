@@ -4,8 +4,8 @@ autoload -U colors && colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # History in cache directory:
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=1000000
+SAVEHIST=1000000
 HISTFILE=~/.cache/zsh/history
 
 # Basic auto/tab complete:
@@ -41,6 +41,19 @@ bindkey -s '^o' 'lfcd\r'
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+
+
+__conda_setup="$('/home/samrat/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+  eval "$__conda_setup"
+else
+  if [ -f "/home/samrat/anaconda3/etc/profile.d/conda.sh" ]; then
+    . "/home/samrat/anaconda3/etc/profile.d/conda.sh"
+  else
+    export PATH="/home/samrat/anaconda3/bin:$PATH"
+  fi
+fi
+unset __conda_setup
 
 # Load aliases and shortcuts if existent.
 [ -f  "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
