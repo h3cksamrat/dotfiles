@@ -3,7 +3,7 @@ local opt = vim.opt
 
 opt.completeopt = { "menu", "menuone", "noselect" }
 opt.termguicolors = true
-opt.mouse = "a"
+opt.mouse = ""
 opt.winbar = "%=%m %f"
 opt.exrc = true
 -- Better editor UI
@@ -48,6 +48,9 @@ g.snippets = "luasnip"
 -- Map <leader> to space
 g.mapleader = " "
 g.maplocalleader = " "
+
+--rainbow enable --
+g.rainbow_active = 1
 
 -- foldmethod
 opt.foldmethod = "expr"

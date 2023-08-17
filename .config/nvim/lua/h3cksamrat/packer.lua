@@ -11,7 +11,9 @@ return require("packer").startup(function(use)
 	use("sbdchd/neoformat")
 	use("mbbill/undotree")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("p00f/nvim-ts-rainbow")
+	use("wakatime/vim-wakatime")
+
+	use("luochen1990/rainbow")
 
 	use("lewis6991/gitsigns.nvim")
 	use({

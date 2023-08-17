@@ -30,7 +30,7 @@ alias psqld="docker stop postgres-1 adminer-1" # stop postgres
 
 alias c="clear"
 alias ..="cd .."
-alias q="exit"
+alias ":q"="exit"
 
 # nvim alias
 alias vim="nvim"
