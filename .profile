@@ -62,4 +62,5 @@ PATH=$ANDROID_HOME/emulator/:$PATH
 PATH=$ANDROID_HOME/platform-tools/:$PATH
 
 PATH="/home/samrat/.detaspace/bin:$PATH"
+PATH="/home/samrat/github/oss/depot_tools:$PATH"
 export PATH="$PATH:$PNPM_HOME:$VCPKG_ROOT:$SOLANA_PATH"

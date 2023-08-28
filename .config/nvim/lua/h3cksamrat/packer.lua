@@ -3,6 +3,7 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	use("github/copilot.vim")
+	use("tpope/vim-fugitive")
 
 	-- misc plugins
 	use("dstein64/vim-startuptime")
@@ -12,6 +13,7 @@ return require("packer").startup(function(use)
 	use("mbbill/undotree")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("wakatime/vim-wakatime")
+	-- use("f-person/git-blame.nvim")
 
 	use("luochen1990/rainbow")
 
@@ -51,6 +53,7 @@ return require("packer").startup(function(use)
 	use("williamboman/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig")
 	use("onsails/lspkind.nvim")
+	use("kosayoda/nvim-lightbulb")
 
 	-- nvim-cmp
 	use("hrsh7th/nvim-cmp")
@@ -81,13 +84,16 @@ return require("packer").startup(function(use)
 
 	-- dart
 	use("dart-lang/dart-vim-plugin")
+	-- use("thosakwe/vim-flutter")
+	-- use("natebosch/vim-lsc")
+	-- use("natebosch/vim-lsc-dart")
+
 	use({
 		"akinsho/flutter-tools.nvim",
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"stevearc/dressing.nvim", -- optional for vim.ui.select
 		},
-		filetypes = { "dart" },
 	})
 
 	-- terraform

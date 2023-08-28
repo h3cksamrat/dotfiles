@@ -55,9 +55,9 @@ bindsym $mod+d exec "rofi -show run"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+Shift+d exec --no-startup-id "rofi -show drun"
+bindsym $mod+Shift+d exec "rofi -show drun"
 
-bindsym $mod+Tab exec --no-startup-id "rofi -show window"
+bindsym $mod+Tab exec "rofi -show window"
 
 # change focus
 bindsym $mod+h focus left
@@ -201,7 +201,10 @@ exec --no-startup-id safeeyes
 
 # start applications to dedicated workspaces on startup
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/brave-browser-stable'
-exec --no-startup-id i3-msg 'workspace 3; exec /home/samrat/.cargo/bin/alacritty'
+exec --no-startup-id i3-msg 'workspace 3; exec /home/samrat/.cargo/bin/alacritty --class "Alacritty","ws3_terminal"'
+
+assign [instance="ws3_terminal"] $ws3
+
 
 # Disable animations
 for_window [class="^.*"] border pixel 0

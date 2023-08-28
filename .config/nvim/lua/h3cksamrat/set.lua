@@ -52,6 +52,9 @@ g.maplocalleader = " "
 --rainbow enable --
 g.rainbow_active = 1
 
+-- git blame disable
+-- g.gitblame_display_virtual_text = 0
+
 -- foldmethod
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
