@@ -9,3 +9,9 @@ require("mason-lspconfig").setup_handlers({
 		require("lspconfig")[server].setup(default_opts)
 	end,
 })
+
+require("lspconfig").rust_analyzer.setup({
+	on_attach = custom_config.common_on_attach,
+	capabilities = custom_config.capabilities,
+	cmd = { "rustup", "run", "stable", "rust-analyzer" },
+})

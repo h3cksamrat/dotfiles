@@ -64,3 +64,5 @@ PATH=$ANDROID_HOME/platform-tools/:$PATH
 PATH="/home/samrat/.detaspace/bin:$PATH"
 PATH="/home/samrat/github/oss/depot_tools:$PATH"
 export PATH="$PATH:$PNPM_HOME:$VCPKG_ROOT:$SOLANA_PATH"
+
+export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig

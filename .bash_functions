@@ -66,6 +66,11 @@ function trim() {
 
 }
 
+function pdflower() {
+  local FILE="$1"
+  b gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="resized_$FILE" "$FILE"
+}
+
 function tnew() {
   tmux new -s `pwd | sed 's/.*\///g'`
 }
@@ -137,4 +142,32 @@ function b() {
   # run original bash command instead of alias
   local command="$@"
   bash -c "$command"
+}
+
+function addToPath() {
+  if [ -d "$1" ]; then
+    if [[ "$PATH" != *"$1"* ]]; then
+            export PATH=$PATH:$1;
+            return;
+    fi;
+    echo "Path already exists";
+  fi
+}
+
+function convertProxyUrlToHttp() {
+  # conver domain:port:username:password to http://username:password@domain:port
+  local proxyUrl="$1"
+  local domain=`echo "$proxyUrl" | awk -F: '{print $1}'`
+  local port=`echo "$proxyUrl" | awk -F: '{print $2}'`
+  local username=`echo "$proxyUrl" | awk -F: '{print $3}'`
+  local password=`echo "$proxyUrl" | awk -F: '{print $4}'`
+
+  if [ -z "$username" ]; then
+    echo "export http_proxy=http://$domain:$port"
+    echo "export https_proxy=http://$domain:$port"
+  else
+    echo "export http_proxy=http://$username:$password@$domain:$port"
+    echo "export https_proxy=http://$username:$password@$domain:$port"
+  fi
+
 }
