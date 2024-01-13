@@ -56,24 +56,5 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 export STARSHIP_CONFIG=~/.config/starship/nerd-font-symbols.toml
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-eval "$(twilio autocomplete:script zsh)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export EDITOR="nvim"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/samrat/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/samrat/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/samrat/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/samrat/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
