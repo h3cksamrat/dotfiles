@@ -10,6 +10,7 @@ alias serve="browser-sync start --server --files ."
 alias gti="git"
 
 alias show_scripts="cat package.json | gron | rg '^json.scripts' | gron -u"
+alias ng="~/.local/bin/nest-generator.sh"
 
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
 alias hg='history|rg'
@@ -47,3 +48,17 @@ alias game_vim="docker run -it --rm brandoncc/vim-be-good:stable"
 
 alias lg="lazygit"
 alias ld="lazydocker"
+
+alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"'
+
+alias gunwip='git rev-list --max-count=1 --format="%s" HEAD | grep -q "\--wip--" && git reset HEAD~1'
+
+# Similar to `gunwip` but recursive "Unwips" all recent `--wip--` commits not just the last one
+function gunwipall() {
+  local _commit=$(git log --grep='--wip--' --invert-grep --max-count=1 --format=format:%H)
+
+  # Check if a commit without "--wip--" was found and it's not the same as HEAD
+  if [[ "$_commit" != "$(git rev-parse HEAD)" ]]; then
+    git reset $_commit || return 1
+  fi
+}

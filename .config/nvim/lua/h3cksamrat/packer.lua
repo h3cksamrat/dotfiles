@@ -3,6 +3,8 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
 	use("github/copilot.vim")
+	-- use("Exafunction/codeium.vim")
+
 	use("tpope/vim-fugitive")
 
 	-- misc plugins
@@ -71,6 +73,7 @@ return require("packer").startup(function(use)
 
 	-- Debugger
 	use("mfussenegger/nvim-dap")
+	use("nvim-neotest/nvim-nio")
 	use("rcarriga/nvim-dap-ui")
 	use("theHamsta/nvim-dap-virtual-text")
 	use("nvim-telescope/telescope-dap.nvim")

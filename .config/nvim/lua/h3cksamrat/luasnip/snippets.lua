@@ -1,10 +1,13 @@
 local ls = require("luasnip")
-
 local s = ls.s
 local fmt = require("luasnip.extras.fmt").fmt
+local fmta = require("luasnip.extras.fmt").fmta
 local i = ls.insert_node
 local c = ls.choice_node
 local f = ls.function_node
+local d = ls.dynamic_node
+local t = ls.text_node
+local rep = require("luasnip.extras").rep
 
 local filename = function()
 	local cur_filename = vim.fs.basename(vim.api.nvim_buf_get_name(0))
@@ -21,7 +24,7 @@ ls.add_snippets("all", {
 	),
 })
 
-ls.add_snippets("filename", {
+ls.add_snippets("all", {
 	s("filename", f(filename)),
 })
 
@@ -56,6 +59,31 @@ ls.add_snippets("typescriptreact", {
   }}
   ]],
 			{ tfilename = f(filename), i(1) }
+		)
+	),
+})
+
+ls.add_snippets("typescript", {
+	s(
+		"enum",
+		fmt(
+			[[
+export const {} = {{
+  {}
+}} as const;
+
+export type {} = (typeof {})[keyof typeof {}];
+]],
+			{
+				c(1, {
+					f(filename),
+					i(1),
+				}),
+				i(2),
+				rep(1),
+				rep(1),
+				rep(1),
+			}
 		)
 	),
 })
