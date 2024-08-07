@@ -26,6 +26,7 @@ if [ -n "$ZSH_VERSION" ]; then
 fi
 
 if [ -d "/home/linuxbrew/.linuxbrew/bin" ] ; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
 
@@ -41,7 +42,6 @@ if [ -f "$HOME/.shell/env" ] ; then
   . "$HOME/.shell/env"
 fi
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 . "$HOME/.cargo/env"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -56,17 +56,15 @@ GOROOT="/usr/local/go"
 PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
 
 SOLANA_PATH="$HOME/.local/share/solana/install/active_release/bin"
-
-export ANDROID_HOME=$HOME/android/sdk
-PATH=$ANDROID_HOME/cmdline-tools/tools/bin/:$PATH
-PATH=$ANDROID_HOME/emulator/:$PATH
-PATH=$ANDROID_HOME/platform-tools/:$PATH
-
-PATH="/home/samrat/.detaspace/bin:$PATH"
-PATH="/home/samrat/github/oss/depot_tools:$PATH"
 export PATH="$PATH:$PNPM_HOME:$VCPKG_ROOT:$SOLANA_PATH"
 
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
 
 export PATH="/home/samrat/.local/share/solana/install/active_release/bin:$PATH"
-export PATH="$PATH:/home/samrat/.avm/bin"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+eval "$(pyenv virtualenv-init -)"

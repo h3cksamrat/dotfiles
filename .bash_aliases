@@ -1,4 +1,4 @@
-alias ls="exa --icons"
+alias ls="exa"
 alias ll="ls -lh"
 alias la="ls -a"
 # alias lt="ls --human-readable --size -1 -S --classify"
