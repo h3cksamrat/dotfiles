@@ -68,3 +68,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 eval "$(pyenv virtualenv-init -)"
+
+export PATH="/home/samrat/.local/kitty.app/bin:$PATH"

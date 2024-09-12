@@ -9,7 +9,8 @@ SAVEHIST=1000000
 HISTFILE=~/.cache/zsh/history
 
 # Basic auto/tab complete:
-autoload -U compinit
+fpath+=~/.zfunc
+autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
