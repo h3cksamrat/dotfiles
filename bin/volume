@@ -1,0 +1,31 @@
+#!/bin/sh
+
+setVolume=$1
+maxVolume=100
+
+if [ $setVolume ]; then
+  # check if it contains + or -
+  isDiff=`echo $setVolume | grep -oE '^\+|^-'`
+
+  if [ $isDiff ]; then
+    # Get the current volume
+    vol=`pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | grep -v '^$' | tr -d '%'`
+
+    # Get the diff
+    diff=`echo $setVolume | tr -d '+' | tr -d '-'`
+
+    # Add or subtract the diff
+    if [ $isDiff = '+' ]; then
+      setVolume=$((vol + diff))
+    else
+      setVolume=$((vol - diff))
+    fi
+  fi
+
+  # Make the volume not greater than maxVolume
+  if [ $setVolume -gt $maxVolume ]; then
+    setVolume=$maxVolume
+  fi
+
+  pactl set-sink-volume @DEFAULT_SINK@ ${setVolume}%
+fi
