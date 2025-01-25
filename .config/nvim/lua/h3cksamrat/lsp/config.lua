@@ -14,11 +14,16 @@ local common_on_attach = function()
 	nnoremap("dn", vim.diagnostic.goto_next, { buffer = 0 })
 	nnoremap("dp", vim.diagnostic.goto_prev, { buffer = 0 })
 	nnoremap("dl", "<cmd>Telescope diagnostics<cr>", { buffer = 0 })
-	-- auto import on ci
+	nnoremap("<leader>co", function()
+		vim.lsp.buf.code_action({
+			apply = true,
+			context = { diagnostics = {}, only = { "source.organizeImports", "source.removeUnused" } },
+		})
+	end, { buffer = 0 })
 	nnoremap("<leader>ci", function()
 		vim.lsp.buf.code_action({
 			apply = true,
-			context = { diagnostics = {}, only = { "source.organizeImports", "source.addMissingImports" } },
+			context = { diagnostics = {}, only = { "source.addMissingImports" } },
 		})
 	end, { buffer = 0 })
 	nnoremap("<leader>ca", vim.lsp.buf.code_action, { buffer = 0 })

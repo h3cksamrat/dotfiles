@@ -15,7 +15,11 @@ return require("packer").startup(function(use)
 	use("mbbill/undotree")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("wakatime/vim-wakatime")
-  use('charm-and-friends/freeze.nvim')
+	use("charm-and-friends/freeze.nvim")
+	use({
+		"3rd/image.nvim",
+		requires = { "luarocks.nvim" },
+	})
 	-- use("f-person/git-blame.nvim")
 
 	use("luochen1990/rainbow")
