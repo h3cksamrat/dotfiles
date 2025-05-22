@@ -8,6 +8,11 @@ return require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 
 	-- misc plugins
+	use({
+		"jellydn/my-note.nvim",
+		requires = { "MunifTanjim/nui.nvim" },
+	})
+
 	use("dstein64/vim-startuptime")
 	use("folke/zen-mode.nvim")
 	use("kyazdani42/nvim-web-devicons")
@@ -49,6 +54,7 @@ return require("packer").startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lua/popup.nvim")
 	use("nvim-telescope/telescope.nvim")
+	use("folke/todo-comments.nvim")
 
 	-- treesitter
 	use("nvim-treesitter/nvim-treesitter")
@@ -57,7 +63,7 @@ return require("packer").startup(function(use)
 
 	-- lsp
 	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
+	use("mason-org/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig")
 	use("onsails/lspkind.nvim")
 	use("kosayoda/nvim-lightbulb")

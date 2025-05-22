@@ -35,6 +35,8 @@ nnoremap("<leader>tr", function()
 	end
 end)
 
+nnoremap("<leader>n", "<cmd>MyNote<cr>", { desc = "Open note" })
+
 -- To disable arrow keys
 --[[ local arrow_keys = { "<Left>", "<Right>", "<Up>", "<Down>" }
 local modes = {nnoremap, vnoremap, inoremap }

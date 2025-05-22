@@ -5,7 +5,20 @@ local autocmd = A.nvim_create_autocmd
 local PrettierGroup = augroup("Prettier", { clear = true })
 autocmd("BufWritePre", {
 	group = PrettierGroup,
-	pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.json", "*.css", "*.scss", "*.html", "*.vue", "*.lua", "*.go" },
+	pattern = {
+		"*.js",
+		"*.jsx",
+		"*.ts",
+		"*.tsx",
+		"*.json",
+		"*.css",
+		"*.scss",
+		"*.html",
+		"*.vue",
+		"*.lua",
+		"*.go",
+		"*.astro",
+	},
 	callback = function()
 		vim.cmd("Neoformat")
 	end,

@@ -28,6 +28,19 @@ function gitcheat() {
   echo -e "Provide the date in format:\nTue Apr 12 15:23:10 2022 +0545\n"
 }
 
+function grmc() {
+  COMMIT="$1"
+
+  git rebase --onto ${COMMIT}^ ${COMMIT} && echo "Removed commit $COMMIT"
+}
+
+function gcp() {
+  COMMIT="$1"
+  FILE="$2"
+
+  git show ${COMMIT}:${FILE} > ${FILE}
+}
+
 function pubip() {
   IP=$(dig +short myip.opendns.com @resolver1.opendns.com)
   if [ "$IP" ]; then

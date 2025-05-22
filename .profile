@@ -42,7 +42,9 @@ if [ -f "$HOME/.shell/env" ] ; then
   . "$HOME/.shell/env"
 fi
 
-. "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ] ; then
+  . "$HOME/.cargo/env"
+fi
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -60,13 +62,8 @@ export PATH="$PATH:$PNPM_HOME:$VCPKG_ROOT:$SOLANA_PATH"
 
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/share/pkgconfig
 
-export PATH="/home/samrat/.local/share/solana/install/active_release/bin:$PATH"
+# kitty
+export PATH="$HOME/.local/kitty.app/bin:$PATH"
+source <(kubectl completion zsh)
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-eval "$(pyenv virtualenv-init -)"
-
-export PATH="/home/samrat/.local/kitty.app/bin:$PATH"
+export PATH="/var/lib/snapd/snap/bin:$PATH"

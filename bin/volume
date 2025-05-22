@@ -1,7 +1,7 @@
 #!/bin/sh
 
 setVolume=$1
-maxVolume=150
+maxVolume=100
 
 if [ $setVolume ]; then
   # check if it contains + or -

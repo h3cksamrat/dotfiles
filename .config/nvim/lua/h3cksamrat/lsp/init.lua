@@ -4,7 +4,7 @@ local nnoremap = Remap.nnoremap
 local xnoremap = Remap.xnoremap
 local rt = require("rust-tools")
 
-require("mason-lspconfig").setup_handlers({
+require("mason-lspconfig").setup({
 	function(server)
 		local default_opts = {
 			on_attach = custom_config.common_on_attach,
@@ -21,8 +21,20 @@ require("lspconfig").rust_analyzer.setup({
 		nnoremap("gd", vim.lsp.buf.definition, { buffer = 0 })
 		nnoremap("<leader>gt", vim.lsp.buf.type_definition, { buffer = 0 })
 		nnoremap("<leader>gi", vim.lsp.buf.implementation, { buffer = 0 })
-		nnoremap("dn", vim.diagnostic.goto_next, { buffer = 0 })
-		nnoremap("dp", vim.diagnostic.goto_prev, { buffer = 0 })
+		nnoremap("dn", function()
+			vim.diagnostic.jump({
+				severity = vim.diagnostic.severity.ERROR,
+				count = 1,
+				float = true,
+			})
+		end, { buffer = 0 })
+		nnoremap("dp", function()
+			vim.diagnostic.jump({
+				severity = vim.diagnostic.severity.ERROR,
+				count = -1,
+				float = true,
+			})
+		end, { buffer = 0 })
 		nnoremap("dl", "<cmd>Telescope diagnostics<cr>", { buffer = 0 })
 		nnoremap("<leader>bf", function()
 			vim.lsp.buf.format({ async = true })
