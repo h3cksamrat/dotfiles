@@ -62,7 +62,7 @@ return require("packer").startup(function(use)
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 
 	-- lsp
-	use("williamboman/mason.nvim")
+	use("mason-org/mason.nvim")
 	use("mason-org/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig")
 	use("onsails/lspkind.nvim")

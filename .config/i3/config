@@ -50,7 +50,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec "kitty"
-bindsym $mod+Shift+b exec "firefox"
+bindsym $mod+Shift+b exec "microsoft-edge-stable"
 
 # kill focused window
 bindsym $mod+Shift+q kill

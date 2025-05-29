@@ -4,14 +4,42 @@ local nnoremap = Remap.nnoremap
 local xnoremap = Remap.xnoremap
 local rt = require("rust-tools")
 
+require("mason").setup({})
 require("mason-lspconfig").setup({
-	function(server)
-		local default_opts = {
-			on_attach = custom_config.common_on_attach,
-			capabilities = custom_config.capabilities,
-		}
-		require("lspconfig")[server].setup(default_opts)
-	end,
+	automatic_enable = true,
+	ensure_installed = {
+		"ts_ls", -- typescript language server
+		"rust_analyzer", -- rust language server
+		"lua_ls", -- lua language server
+		"gopls", -- go language server
+	},
+	handlers = {
+		function(server)
+			require("lspconfig")[server].setup({
+				capabilities = custom_config.capabilities,
+			})
+		end,
+	},
+})
+
+vim.diagnostic.config({
+	virtual_text = true,
+})
+
+vim.lsp.config("*", {
+	on_attach = custom_config.common_on_attach,
+})
+
+vim.lsp.config("ts_ls", {
+	capabilities = custom_config.capabilities,
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
+		"typescript",
+		"typescriptreact",
+		"typescript.tsx",
+	},
 })
 
 require("lspconfig").rust_analyzer.setup({
