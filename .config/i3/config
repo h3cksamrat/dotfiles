@@ -49,6 +49,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 20%-
 floating_modifier $mod
 
 # start a terminal
+# bindsym $mod+Return exec "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia kitty"
 bindsym $mod+Return exec "kitty"
 bindsym $mod+Shift+b exec "microsoft-edge-stable"
 

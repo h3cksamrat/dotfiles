@@ -184,3 +184,16 @@ function convertProxyUrlToHttp() {
   fi
 
 }
+
+function fanSpeed() {
+  local cpuFanSpeed="$1"
+  local gpuFanSpeed="$2"
+
+  if [ -z "$cpuFanSpeed" ] || [ -z "$gpuFanSpeed" ]; then
+    echo "Usage: fanSpeed <cpu_fan_speed> <gpu_fan_speed>"
+    return;
+  fi
+
+  echo "Setting CPU fan speed to $cpuFanSpeed and GPU fan speed to $gpuFanSpeed"
+  echo "${cpuFanSpeed},${gpuFanSpeed}" | sudo tee "/sys/module/linuwu_sense/drivers/platform:acer-wmi/acer-wmi/predator_sense/fan_speed" > /dev/null
+}

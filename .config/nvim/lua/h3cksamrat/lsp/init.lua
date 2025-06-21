@@ -22,26 +22,6 @@ require("mason-lspconfig").setup({
 	},
 })
 
-vim.diagnostic.config({
-	virtual_text = true,
-})
-
-vim.lsp.config("*", {
-	on_attach = custom_config.common_on_attach,
-})
-
-vim.lsp.config("ts_ls", {
-	capabilities = custom_config.capabilities,
-	filetypes = {
-		"javascript",
-		"javascriptreact",
-		"javascript.jsx",
-		"typescript",
-		"typescriptreact",
-		"typescript.tsx",
-	},
-})
-
 require("lspconfig").rust_analyzer.setup({
 	on_attach = function(_, bufnr)
 		nnoremap("gr", rt.references.references, { buffer = bufnr })
@@ -73,4 +53,49 @@ require("lspconfig").rust_analyzer.setup({
 	end,
 	capabilities = custom_config.capabilities,
 	cmd = { "rustup", "run", "stable", "rust-analyzer" },
+})
+
+vim.diagnostic.config({
+	virtual_text = true,
+})
+
+vim.lsp.config("*", {
+	on_attach = custom_config.common_on_attach,
+})
+
+vim.lsp.config("ts_ls", {
+	on_attach = custom_config.common_on_attach,
+	capabilities = custom_config.capabilities,
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
+		"typescript",
+		"typescriptreact",
+		"typescript.tsx",
+	},
+})
+
+require("lspconfig").jsonls.setup({
+	settings = {
+		json = {
+			schemas = require("schemastore").json.schemas(),
+			validate = { enable = true },
+		},
+	},
+})
+
+require("lspconfig").yamlls.setup({
+	settings = {
+		yaml = {
+			schemaStore = {
+				-- You must disable built-in schemaStore support if you want to use
+				-- this plugin and its advanced options like `ignore`.
+				enable = false,
+				-- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+				url = "",
+			},
+			schemas = require("schemastore").yaml.schemas(),
+		},
+	},
 })

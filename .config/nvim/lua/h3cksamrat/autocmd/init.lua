@@ -7,6 +7,14 @@ local autocmd = A.nvim_create_autocmd
 SamratGroup = augroup("Samrat", {})
 local yank_group = augroup("YankGroup", {})
 
+autocmd("FileType", {
+	group = SamratGroup,
+	pattern = { "vimwiki" },
+	callback = function()
+		A.nvim_buf_del_keymap(0, "i", "<Tab>")
+	end,
+})
+
 -- Highlight region on yank
 autocmd("TextYankPost", {
 	group = yank_group,
@@ -21,17 +29,17 @@ local function trim_trailing_whitespace()
 	A.nvim_win_set_cursor(0, pos)
 end
 
-local function trim_trailing_lines()
-	local last_line = A.nvim_buf_line_count(0)
-	local last_nonblank_line = vim.fn.prevnonblank(last_line)
-	if last_line > 0 and last_nonblank_line ~= last_line then
-		A.nvim_buf_set_lines(0, last_nonblank_line, -1, true, {})
-	end
-end
+-- local function trim_trailing_lines()
+-- 	local last_line = A.nvim_buf_line_count(0)
+-- 	local last_nonblank_line = vim.fn.prevnonblank(last_line)
+-- 	if last_line > 0 and last_nonblank_line ~= last_line then
+-- 		A.nvim_buf_set_lines(0, last_nonblank_line, -1, true, {})
+-- 	end
+-- end
 
 local trimWhiteSpace = function()
 	if not vim.o.binary and vim.o.filetype ~= "diff" then
-		trim_trailing_lines()
+		-- trim_trailing_lines()
 		trim_trailing_whitespace()
 	end
 end

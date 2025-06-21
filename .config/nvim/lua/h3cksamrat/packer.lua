@@ -2,7 +2,13 @@ return require("packer").startup(function(use)
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
 
-	use("github/copilot.vim")
+	-- use("github/copilot.vim")
+	use({
+		"supermaven-inc/supermaven-nvim",
+		config = function()
+			require("supermaven-nvim").setup({})
+		end,
+	})
 	-- use("Exafunction/codeium.vim")
 
 	use("tpope/vim-fugitive")
@@ -15,16 +21,12 @@ return require("packer").startup(function(use)
 
 	use("dstein64/vim-startuptime")
 	use("folke/zen-mode.nvim")
-	use("kyazdani42/nvim-web-devicons")
 	use("sbdchd/neoformat")
 	use("mbbill/undotree")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("wakatime/vim-wakatime")
 	use("charm-and-friends/freeze.nvim")
-	use({
-		"3rd/image.nvim",
-		requires = { "luarocks.nvim" },
-	})
+	use({ "3rd/image.nvim" })
 	-- use("f-person/git-blame.nvim")
 
 	use("luochen1990/rainbow")
@@ -48,7 +50,18 @@ return require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 
 	-- use("s1n7ax/nvim-terminal")
-	use("kyazdani42/nvim-tree.lua")
+	use("nvim-tree/nvim-web-devicons")
+	-- use("kyazdani42/nvim-tree.lua")
+
+	use({
+		"echasnovski/mini.icons",
+		branch = "stable",
+		config = function()
+			require("mini.icons").setup()
+		end,
+	})
+
+	use("stevearc/oil.nvim")
 
 	-- telescope
 	use("nvim-lua/plenary.nvim")
@@ -67,6 +80,7 @@ return require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("onsails/lspkind.nvim")
 	use("kosayoda/nvim-lightbulb")
+	use("b0o/schemastore.nvim")
 
 	-- nvim-cmp
 	use("hrsh7th/nvim-cmp")
@@ -133,4 +147,19 @@ return require("packer").startup(function(use)
 
 	-- rust
 	use("simrat39/rust-tools.nvim")
+
+	-- avante
+	use("MunifTanjim/nui.nvim")
+	use("MeanderingProgrammer/render-markdown.nvim")
+	use("stevearc/dressing.nvim") -- for enhanced input UI
+	use("folke/snacks.nvim") -- for modern input UI
+
+	-- use({
+	-- 	"yetone/avante.nvim",
+	-- 	branch = "main",
+	-- 	run = "make",
+	-- 	config = function()
+	-- 		require("avante").setup()
+	-- 	end,
+	-- })
 end)
