@@ -1,10 +1,8 @@
-require("h3cksamrat.autocmd.prettier")
-
 local A = vim.api
 local augroup = A.nvim_create_augroup
 local autocmd = A.nvim_create_autocmd
 
-SamratGroup = augroup("Samrat", {})
+local SamratGroup = augroup("Samrat", {})
 local yank_group = augroup("YankGroup", {})
 
 autocmd("FileType", {
