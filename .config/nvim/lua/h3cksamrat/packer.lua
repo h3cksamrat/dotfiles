@@ -144,6 +144,15 @@ return require("packer").startup(function(use)
 	-- 	end,
 	-- })
 	--
+	--
+
+	--
+	use({
+		"pcolladosoto/tinygo.nvim",
+		config = function()
+			require("tinygo").setup()
+		end,
+	})
 
 	-- rust
 	use("simrat39/rust-tools.nvim")
