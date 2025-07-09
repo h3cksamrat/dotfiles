@@ -5,7 +5,13 @@ return {
 	"mbbill/undotree",
 	"lukas-reineke/indent-blankline.nvim",
 	"wakatime/vim-wakatime",
-	{ "f-person/git-blame.nvim", enabled = false },
+	{
+		"f-person/git-blame.nvim",
+		opts = {
+			enabled = false, -- if you want to enable the plugin
+		},
+	},
+
 	"luochen1990/rainbow",
 	"vimwiki/vimwiki",
 	"tpope/vim-repeat",

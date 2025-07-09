@@ -41,7 +41,7 @@ battery all {
     status_full = "☻ FULL"
     path = "/sys/class/power_supply/BAT%d/uevent"
     low_threshold = 20
-    # integer_battery_capacity = true
+    integer_battery_capacity = true
     last_full_capacity = true
 }
 
