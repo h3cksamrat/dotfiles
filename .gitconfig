@@ -1,0 +1,5 @@
+[alias]
+  tagv = "! git tag | sort -V"
+  taga = "! git tag -a $(git tagv | tail -n 1 | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g') -m \"Version $(git tagv | tail -n 1 | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')\""
+[core]
+	autocrlf = false
