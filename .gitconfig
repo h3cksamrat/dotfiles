@@ -1,5 +1,8 @@
 [alias]
   tagv = "! git tag | sort -V"
   taga = "! git tag -a $(git tagv | tail -n 1 | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g') -m \"Version $(git tagv | tail -n 1 | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')\""
+  tinfo="! git log --pretty=oneline ^$(git tagv | tail -n 1) HEAD"
+  tinfoa="! git log --pretty=oneline ^$(git tagv | tail -n 2 | head -n 1) $(git tagv | tail -n 1)"
+  ecommit = "commit --allow-empty -m 'Empty-Commit'"
 [core]
 	autocrlf = false
