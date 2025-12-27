@@ -64,6 +64,10 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/u
 
 # kitty
 export PATH="$HOME/.local/kitty.app/bin:$PATH"
+
+## only if kubectl is installed
+if [[ -x "$(command -v kubectl)" ]]; then
 source <(kubectl completion zsh)
+fi
 
 export PATH="/var/lib/snapd/snap/bin:$PATH"
